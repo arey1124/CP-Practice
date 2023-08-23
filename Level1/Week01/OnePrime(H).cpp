@@ -12,7 +12,17 @@ signed main() {
     ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
 
     int t; cin >> t;
-    while(t--) {
-        
+    bool isPrime = true;
+    for(int i = 2; i <= t/2; i++) {
+        if(t%i == 0) {
+            isPrime = false;
+            break;
+        }
+    }
+
+    if(isPrime) {
+        cout << "YES" << endl;
+    } else {
+        cout << "NO" << endl;
     }
 }
