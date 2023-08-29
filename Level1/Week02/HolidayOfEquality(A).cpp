@@ -11,16 +11,18 @@ const int INF = LLONG_MAX >> 1;
 signed main() {
     ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
 
-    int m,n; cin >> n >> m;
-    int count = 0;
+    int n, mx = 0 ; cin >> n;
+    int *arr = new int[n];
 
-    for (int a = 0; a <= 1000; a++) {
-        for(int b = 0; b <= 1000; b++) {
-            if(a*a+b==n && b*b+a==m) {
-                count++;
-            }
-        }
+    for(int i = 0; i < n; i++) {
+        cin >> arr[i];
+        mx = max(arr[i], mx);
     }
 
-    cout << count << endl;
+    int ans = 0;
+    for(int i = 0; i < n; i++) {
+        ans += (mx-arr[i]);
+    }
+
+    cout << ans << endl;
 }
