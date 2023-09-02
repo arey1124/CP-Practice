@@ -39,7 +39,5 @@ signed main() {
                 cout << "YES" << endl;
             }
         }
-
-
     }
 }
